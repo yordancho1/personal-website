@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Skills & Expertise - Yordan Todorov">
+    <title>My Skills | Yordan Todorov</title>
+    <link rel="icon" type="image/png" href="images/logo12(2).png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollToPlugin.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Yordan Todorov</a>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="skills.html" class="nav-link active">Skills</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills" style="padding-top: 150px; min-height: 100vh;">
+        <div class="container">
+            <h2 class="section-title">My Skills & Expertise</h2>
+            <p class="section-subtitle">Technologies, tools, and domains I work with</p>
+            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML5</h3>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 10px 0;">Semantic markup, accessibility, modern HTML features</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3>CSS3</h3>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 10px 0;">Flexbox, Grid, animations, responsive design</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 10px 0;">ES6+, DOM manipulation, async/await, APIs</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Artificial Intelligence</h3>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 10px 0;">Machine learning, neural networks, NLP, AI agents</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Digital Marketing</h3>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 10px 0;">SEO, social media, content strategy, analytics</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <h3>Adobe Photoshop</h3>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 10px 0;">Photo editing, compositing, UI design, graphics</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 65%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video Editing</h3>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 10px 0;">Premiere Pro, Final Cut, motion graphics, color grading</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Audio Production</h3>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 10px 0;">DJing, mixing, mastering, sound design</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>CRM & Sales</h3>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 10px 0;">Client management, key accounts, sales strategy</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 50%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 80px; text-align: center;">
+                <h2 class="section-title">Additional Expertise</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px;">
+                    <div style="padding: 30px; border: 2px solid rgba(255,255,255,0.2); background: rgba(255,107,0,0.05);">
+                        <i class="fas fa-code" style="font-size: 40px; color: var(--primary-color); margin-bottom: 15px;"></i>
+                        <h3 style="color: white; margin-bottom: 10px;">Web Development</h3>
+                        <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Full-stack development, responsive design, modern frameworks</p>
+                    </div>
+                    <div style="padding: 30px; border: 2px solid rgba(255,255,255,0.2); background: rgba(255,107,0,0.05);">
+                        <i class="fas fa-mobile-alt" style="font-size: 40px; color: var(--primary-color); margin-bottom: 15px;"></i>
+                        <h3 style="color: white; margin-bottom: 10px;">UI/UX Design</h3>
+                        <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">User research, wireframing, prototyping, usability testing</p>
+                    </div>
+                    <div style="padding: 30px; border: 2px solid rgba(255,255,255,0.2); background: rgba(255,107,0,0.05);">
+                        <i class="fas fa-rocket" style="font-size: 40px; color: var(--primary-color); margin-bottom: 15px;"></i>
+                        <h3 style="color: white; margin-bottom: 10px;">Project Management</h3>
+                        <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Agile methodologies, team collaboration, deadline management</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 60px; text-align: center; display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap;">
+                <a href="projects.html" class="btn btn-primary">
+                    <i class="fas fa-briefcase"></i> View My Projects
+                </a>
+                <a href="contact.html" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Yordan Todorov. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/yordan-todorov-b188002aa/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/yordancho1" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:yordan485@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

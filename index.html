@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yordan Todorov - AI Student & Future-Oriented Technologist | Web Developer, Digital Marketing Expert">
+    <title>Yordan Todorov | Portfolio</title>
+    <link rel="icon" type="image/png" href="images/logo12(2).png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollToPlugin.min.js"></script>
+</head>
+<body class="loading">
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="logo-container">
+            <svg class="yt-merged-logo" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+                <!-- Left arm of Y (bold and prominent) -->
+                <line x1="50" y1="30" x2="100" y2="120" stroke="white" stroke-width="14" stroke-linecap="round"/>
+                <!-- Right arm of Y (bold and prominent) -->
+                <line x1="150" y1="30" x2="100" y2="120" stroke="white" stroke-width="14" stroke-linecap="round"/>
+                <!-- Vertical stem - the main Y stem (bold and prominent) -->
+                <line x1="100" y1="120" x2="100" y2="270" stroke="white" stroke-width="14" stroke-linecap="round"/>
+                <!-- Horizontal T line at the junction -->
+                <line x1="55" y1="120" x2="145" y2="120" stroke="white" stroke-width="14" stroke-linecap="round"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar - Hidden until preloader completes -->
+    <div class="scroll-progress-bar" id="scroll-progress" style="display: none !important;"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#home">Yordan Todorov</a>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Animated Background Elements -->
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <!-- Particle Canvas -->
+        <canvas id="particles-canvas"></canvas>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Hi, I'm <span class="highlight glitch" data-text="Yordan Todorov">Yordan Todorov</span>
+            </h1>
+            <p class="hero-subtitle">AI Student & Future-Oriented Technologist</p>
+            <p class="hero-description">
+                Creative, motivated university student pursuing Artificial Intelligence with a strong foundation in web development, digital marketing, and technical innovation.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary magnetic">View My Work</a>
+                <a href="#contact" class="btn btn-secondary magnetic">Get In Touch</a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/yordan-todorov-b188002aa/" target="_blank" aria-label="LinkedIn" class="magnetic">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/yordancho1" target="_blank" aria-label="GitHub" class="magnetic">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:yordan485@gmail.com" aria-label="Email" class="magnetic">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:+359898325664" aria-label="Phone" class="magnetic">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <a href="#about">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title reveal-text">About Me</h2>
+            <div class="about-content">
+                <div class="about-image reveal-left">
+                    <img src="images/1 (1).jpg" alt="Yordan Todorov" class="profile-img" style="width: 280px; height: 350px; border-radius: 0; border: 4px solid var(--primary-color); object-fit: cover; box-shadow: var(--shadow-lg);">
+                </div>
+                <div class="about-text reveal-right">
+                    <h3>Hello! I'm a passionate technologist and problem solver.</h3>
+                    <p>
+                        Currently pursuing a degree in Artificial Intelligence at JKU Linz, I bring a unique blend of technical proficiency, 
+                        creative thinking, and real-world business experience. With a strong foundation in web development, digital marketing, 
+                        and client relationship management, I excel at translating complex problems into innovative solutions.
+                    </p>
+                    <p>
+                        My journey spans from system programming in high school to freelance web development, digital marketing consulting, 
+                        and now diving deep into AI and computer science. I'm a fast learner who thrives on challenges and continuously 
+                        adapts to emerging technologies. Beyond tech, I'm a professional ballroom dancer and resident DJ, which has honed 
+                        my discipline, creativity, and ability to perform under pressure.
+                    </p>
+                    <div class="about-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Linz, Austria</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Open to Internships & Projects</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>yordan485@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-globe"></i>
+                            <span>Bulgarian (Native) | English (Fluent) | German (Conversational)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title reveal-text">My Skills</h2>
+            <p class="section-subtitle reveal-text">Technologies and tools I work with</p>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML5</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3>CSS3</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Artificial Intelligence</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Digital Marketing</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <h3>Adobe Photoshop</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 65%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video Editing</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Audio Production</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>CRM & Sales</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 50%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title reveal-text">My Projects</h2>
+            <p class="section-subtitle reveal-text">Recent work I'm proud of</p>
+            <div class="projects-grid">
+                <div class="project-card tilt-card" onclick="window.location.href='knowlify.html'" style="cursor: pointer;">
+                    <div class="project-image">
+                        <img src="images/pfpp.png" alt="Knowlify Project" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="project-overlay">
+                            <a href="knowlify.html" class="project-link" title="View Project Details">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Knowlify (KNOW Token)</h3>
+                        <p>Revolutionary AI-powered educational platform combining blockchain technology with gamified learning. Users earn KNOW tokens on Solana blockchain for completing lessons, quizzes, and challenges. Features include staking, governance, AI learning assistant, and real-world rewards redemption.</p>
+                        <div class="project-tags">
+                            <span class="tag">Solana Blockchain</span>
+                            <span class="tag">SPL Token</span>
+                            <span class="tag">AI/ML</span>
+                            <span class="tag">Web3</span>
+                            <span class="tag">Gamification</span>
+                            <span class="tag">DeFi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card tilt-card" onclick="window.location.href='auxit.html'" style="cursor: pointer;">
+                    <div class="project-image">
+                        <img src="images/snaplytics.io_X_auxitai_profile_picture.jpg" alt="AUXIT Music Platform" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="project-overlay">
+                            <a href="auxit.html" class="project-link" title="View Project Details">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>AUXIT Music Platform</h3>
+                        <p>AI-powered music discovery platform that revolutionizes how users experience music. Features hyper-personalized playlists, mood-based discovery, dynamic recommendations, and cross-platform integration with major streaming services like Spotify and Apple Music.</p>
+                        <div class="project-tags">
+                            <span class="tag">AI/ML</span>
+                            <span class="tag">Neural Networks</span>
+                            <span class="tag">NLP</span>
+                            <span class="tag">API Integration</span>
+                            <span class="tag">Music Tech</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card tilt-card">
+                    <div class="project-image">
+                        <img src="images/Untitled design.png" alt="Sistemi Nikolov Website" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="project-overlay">
+                            <a href="sistemi.html" class="project-link" title="View Project Details">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Sistemi Nikolov - Corporate Website</h3>
+                        <p>Full-stack web development project for a professional roofing company. Designed, developed, and deployed a modern, responsive website featuring custom UI/UX, service showcase, portfolio gallery, and contact integration.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML/CSS/JS</span>
+                            <span class="tag">Web Design</span>
+                            <span class="tag">UI/UX</span>
+                            <span class="tag">Web Hosting</span>
+                            <span class="tag">Client Project</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title reveal-text" style="text-align: center;">Get In Touch</h2>
+            <p class="section-subtitle reveal-text" style="text-align: center; max-width: 600px; margin: 0 auto 80px;">Have a project in mind? Let's work together!</p>
+            
+            <div class="contact-cards-grid">
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="contact-card-title">Email</h3>
+                    <p class="contact-card-text"><a href="mailto:yordan485@gmail.com">yordan485@gmail.com</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="contact-card-title">Phone</h3>
+                    <p class="contact-card-text"><a href="tel:+359898325664">+359 898 325664</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="contact-card-title">Location</h3>
+                    <p class="contact-card-text">Linz, 4020, Austria</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h3 class="contact-card-title">LinkedIn</h3>
+                    <p class="contact-card-text"><a href="https://www.linkedin.com/in/yordan-todorov-b188002aa/" target="_blank">Connect with me</a></p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 80px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="mailto:yordan485@gmail.com" class="btn btn-primary magnetic">
+                    <i class="fas fa-envelope"></i> Send me an Email
+                </a>
+                <a href="https://www.linkedin.com/in/yordan-todorov-b188002aa/" target="_blank" class="btn btn-secondary magnetic">
+                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Yordan Todorov. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/yordan-todorov-b188002aa/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/yordancho1" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:yordan485@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

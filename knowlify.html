@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Knowlify - AI-Powered Educational Platform with Blockchain Integration">
+    <title>Knowlify Project | Yordan Todorov</title>
+    <link rel="icon" type="image/png" href="images/logo12(2).png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .project-detail {
+            min-height: 100vh;
+            padding: 120px 20px 80px;
+            background: var(--white);
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 14px;
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+        }
+
+        .project-header {
+            margin-bottom: 60px;
+        }
+
+        .project-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-bg);
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .project-header h1::before {
+            content: '';
+            display: inline-block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            margin-right: 20px;
+            vertical-align: middle;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .meta-item i {
+            color: var(--primary-color);
+            font-size: 18px;
+        }
+
+        .project-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            max-width: 900px;
+        }
+
+        .tech-stack {
+            margin: 60px 0;
+        }
+
+        .tech-stack h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--dark-bg);
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .tech-stack h2::before {
+            content: '//';
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .tech-item {
+            padding: 15px 20px;
+            background: var(--light-bg);
+            border: 2px solid var(--dark-bg);
+            font-weight: 700;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+
+        .tech-item:hover {
+            background: var(--dark-bg);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .features-section {
+            margin: 60px 0;
+        }
+
+        .features-section h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--dark-bg);
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .features-section h2::before {
+            content: '//';
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            padding: 30px;
+            background: var(--white);
+            border: 2px solid var(--dark-bg);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateX(-5px) translateY(-5px);
+            box-shadow: 5px 5px 0 var(--primary-color);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark-bg);
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .feature-card h3::before {
+            content: '—';
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .gallery-section {
+            margin: 60px 0;
+        }
+
+        .gallery-section h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--dark-bg);
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .gallery-section h2::before {
+            content: '//';
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 16/9;
+            background: var(--light-bg);
+            border: 2px solid var(--dark-bg);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Lightbox Modal */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .lightbox-modal.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            animation: zoomIn 0.3s ease;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10001;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            color: var(--primary-color);
+            transform: rotate(90deg);
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .gallery-placeholder {
+            color: var(--text-light);
+            font-size: 3rem;
+            opacity: 0.3;
+        }
+
+        .roadmap-section {
+            margin: 60px 0;
+            padding: 60px 40px;
+            background: var(--light-bg);
+            border: 2px solid var(--dark-bg);
+        }
+
+        .roadmap-section h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--dark-bg);
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .roadmap-section h2::before {
+            content: '//';
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .roadmap-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        .timeline-date {
+            min-width: 120px;
+            font-weight: 900;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark-bg);
+            font-weight: 900;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline-content li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+
+        .timeline-content li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .project-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Yordan Todorov</a>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Detail -->
+    <section class="project-detail">
+        <div class="container">
+            <a href="index.html#projects" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Back to Projects
+            </a>
+
+            <div class="project-header">
+                <h1>Knowlify (KNOW Token)</h1>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>2024 - 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-tag"></i>
+                        <span>Blockchain / EdTech</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-code"></i>
+                        <span>Web3 Application</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-flask"></i>
+                        <span>Personal Project</span>
+                    </div>
+                </div>
+                <p class="project-description">
+                    Knowlify was a passion project exploring the intersection of AI-powered education and blockchain technology. The platform concept featured the KNOW token, a Solana-based SPL utility token designed to reward users for completing educational content, participating in community events, and contributing knowledge. This comprehensive project involved designing token economics, smart contract architecture, gamification systems, and a full educational platform ecosystem.
+                </p>
+            </div>
+
+            <div class="tech-stack">
+                <h2>Technology Stack</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">Solana Blockchain</div>
+                    <div class="tech-item">SPL Token</div>
+                    <div class="tech-item">AI/ML</div>
+                    <div class="tech-item">Web3.js</div>
+                    <div class="tech-item">Smart Contracts</div>
+                    <div class="tech-item">DeFi</div>
+                    <div class="tech-item">Phantom Wallet</div>
+                    <div class="tech-item">React</div>
+                    <div class="tech-item">Node.js</div>
+                </div>
+            </div>
+
+            <div class="features-section">
+                <h2>Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Token Earning System</h3>
+                        <p>Users earn KNOW tokens by completing quizzes, participating in community events, creating content, and referring friends. The gamified approach makes learning engaging and rewarding.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>AI Learning Assistant</h3>
+                        <p>Advanced AI-powered tools help personalize learning paths, provide instant feedback, and create customized study materials based on individual learning styles.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Staking & Governance</h3>
+                        <p>Token holders can stake KNOW to earn interest, unlock exclusive features, and participate in platform governance decisions through decentralized voting.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Premium Content Access</h3>
+                        <p>Spend tokens to unlock in-depth articles, video tutorials, advanced study tools, and exclusive educational resources from industry experts.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Real-World Rewards</h3>
+                        <p>Redeem KNOW tokens for gift cards, educational material discounts, and other tangible rewards, bridging the gap between digital learning and real value.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Community Driven</h3>
+                        <p>Join discussion forums, study groups, and participate in expert Q&A sessions. Build your reputation and earn tokens through knowledge sharing.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-section">
+                <h2>Project Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/Screenshot 2025-11-23 at 13.17.27.png" alt="Knowlify Platform Screenshot 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/Screenshot 2025-11-23 at 13.18.37.png" alt="Knowlify Platform Screenshot 2">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/Screenshot 2025-11-23 at 13.19.04.png" alt="Knowlify Platform Screenshot 3">
+                    </div>
+                </div>
+            </div>
+
+            <div class="roadmap-section">
+                <h2>Project Scope & Vision</h2>
+                <div class="roadmap-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Phase 1</div>
+                        <div class="timeline-content">
+                            <h3>Foundation & Research</h3>
+                            <ul>
+                                <li>Comprehensive tokenomics design and documentation</li>
+                                <li>Solana blockchain architecture research</li>
+                                <li>SPL token standard implementation planning</li>
+                                <li>Platform UI/UX design and prototyping</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Phase 2</div>
+                        <div class="timeline-content">
+                            <h3>Core Development</h3>
+                            <ul>
+                                <li>Smart contract development and testing</li>
+                                <li>Gamification system design</li>
+                                <li>AI integration architecture planning</li>
+                                <li>Wallet integration strategy (Phantom, Solflare, Trust Wallet)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Phase 3</div>
+                        <div class="timeline-content">
+                            <h3>Advanced Features Design</h3>
+                            <ul>
+                                <li>Staking and governance system architecture</li>
+                                <li>Community voting mechanism design</li>
+                                <li>Real-world rewards marketplace concept</li>
+                                <li>DeFi integration research</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Outcome</div>
+                        <div class="timeline-content">
+                            <h3>Achievements & Learning</h3>
+                            <ul>
+                                <li>Deep understanding of blockchain development on Solana</li>
+                                <li>Complete tokenomics and platform documentation</li>
+                                <li>Experience with Web3 technologies and DeFi concepts</li>
+                                <li>Full-stack project planning and architecture skills</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 80px;">
+                <a href="index.html#projects" class="btn btn-primary">
+                    <i class="fas fa-arrow-left"></i> Back to All Projects
+                </a>
+                <a href="index.html#contact" class="btn btn-secondary">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Yordan Todorov. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/yordan-todorov-b188002aa/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/yordancho1" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:yordan485@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightbox">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="Full size image">
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const galleryImages = document.querySelectorAll('.gallery-item img');
+
+        // Add click event to all gallery images
+        galleryImages.forEach(img => {
+            img.addEventListener('click', function(e) {
+                e.stopPropagation();
+                lightbox.classList.add('active');
+                lightboxImg.src = this.src;
+                lightboxImg.alt = this.alt;
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            });
+        });
+
+        // Close lightbox when clicking on background or close button
+        lightbox.addEventListener('click', closeLightbox);
+        lightboxClose.addEventListener('click', closeLightbox);
+
+        // Prevent closing when clicking on the image itself
+        lightboxImg.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        // Close with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AUXIT - AI-Powered Music Discovery Platform">
+    <title>AUXIT Project | Yordan Todorov</title>
+    <link rel="icon" type="image/png" href="images/logo12(2).png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .project-detail {
+            min-height: 100vh;
+            padding: 120px 20px 80px;
+            background: var(--white);
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 14px;
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+        }
+
+        .project-header {
+            margin-bottom: 60px;
+        }
+
+        .project-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-bg);
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .project-header h1::before {
+            content: '';
+            display: inline-block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            margin-right: 20px;
+            vertical-align: middle;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .meta-item i {
+            color: var(--primary-color);
+            font-size: 18px;
+        }
+
+        .project-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            max-width: 900px;
+        }
+
+        .tech-stack {
+            margin: 60px 0;
+        }
+
+        .tech-stack h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--dark-bg);
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .tech-stack h2::before {
+            content: '//';
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .tech-item {
+            padding: 15px 20px;
+            background: var(--light-bg);
+            border: 2px solid var(--dark-bg);
+            font-weight: 700;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+
+        .tech-item:hover {
+            background: var(--dark-bg);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .features-section {
+            margin: 60px 0;
+        }
+
+        .features-section h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--dark-bg);
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .features-section h2::before {
+            content: '//';
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            padding: 30px;
+            background: var(--white);
+            border: 2px solid var(--dark-bg);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateX(-5px) translateY(-5px);
+            box-shadow: 5px 5px 0 var(--primary-color);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark-bg);
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .feature-card h3::before {
+            content: '—';
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .gallery-section {
+            margin: 60px 0;
+        }
+
+        .gallery-section h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--dark-bg);
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .gallery-section h2::before {
+            content: '//';
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            background: var(--light-bg);
+            border: 2px solid var(--dark-bg);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item {
+            cursor: pointer;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.02);
+        }
+
+        .gallery-placeholder {
+            color: var(--text-light);
+            font-size: 3rem;
+            opacity: 0.3;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 40px;
+            color: var(--white);
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            color: var(--primary-color);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-content img {
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .roadmap-section {
+            margin: 60px 0;
+            padding: 60px 40px;
+            background: var(--light-bg);
+            border: 2px solid var(--dark-bg);
+        }
+
+        .roadmap-section h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--dark-bg);
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .roadmap-section h2::before {
+            content: '//';
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .roadmap-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        .timeline-date {
+            min-width: 120px;
+            font-weight: 900;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark-bg);
+            font-weight: 900;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline-content li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+
+        .timeline-content li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .project-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Yordan Todorov</a>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Detail -->
+    <section class="project-detail">
+        <div class="container">
+            <a href="index.html#projects" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Back to Projects
+            </a>
+
+            <div class="project-header">
+                <h1>AUXIT Music Platform</h1>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-tag"></i>
+                        <span>Music Tech / AI</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-code"></i>
+                        <span>AI Application</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-flask"></i>
+                        <span>Personal Project</span>
+                    </div>
+                </div>
+                <p class="project-description">
+                    AUXIT was an ambitious personal project exploring the intersection of artificial intelligence and music discovery. The platform concept aimed to revolutionize how people experience music by leveraging advanced AI to create hyper-personalized listening experiences. This comprehensive project involved developing sophisticated machine learning algorithms, cross-platform API integration, and a complete user experience design for modern music discovery.
+                </p>
+            </div>
+
+            <div class="tech-stack">
+                <h2>Technology Stack</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">Neural Networks</div>
+                    <div class="tech-item">Machine Learning</div>
+                    <div class="tech-item">NLP</div>
+                    <div class="tech-item">Python</div>
+                    <div class="tech-item">TensorFlow</div>
+                    <div class="tech-item">API Integration</div>
+                    <div class="tech-item">React</div>
+                    <div class="tech-item">Node.js</div>
+                    <div class="tech-item">Spotify API</div>
+                    <div class="tech-item">Apple Music API</div>
+                </div>
+            </div>
+
+            <div class="features-section">
+                <h2>Core Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Hyper-Personalized Playlists</h3>
+                        <p>Advanced AI analyzes saved songs, playlists, and listening habits to create perfectly tailored music recommendations that evolve with user preferences.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Mood-Based Discovery</h3>
+                        <p>Real-time mood detection algorithms generate perfect playlists matching users' emotional state, creating the ideal soundtrack for any moment.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Dynamic Playlists</h3>
+                        <p>Experience playlists that intelligently adapt based on time of day, weather conditions, and current activity for contextually relevant music.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Discovery Mode</h3>
+                        <p>Explore new artists and genres with AI-powered recommendations that balance familiarity with discovery, expanding musical horizons safely.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Cross-Platform Integration</h3>
+                        <p>Seamless connection with major streaming services including Spotify and Apple Music, unifying music libraries across platforms.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Concert Recommendations</h3>
+                        <p>Personalized concert and event suggestions based on music preferences and location, connecting digital listening with live experiences.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-section">
+                <h2>Project Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openLightbox('images/AuxitDemo1.png')">
+                        <img src="images/AuxitDemo1.png" alt="AUXIT Platform Demo 1">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('images/AuxitDemo2.png')">
+                        <img src="images/AuxitDemo2.png" alt="AUXIT Platform Demo 2">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('images/AuxitDemo3.png')">
+                        <img src="images/AuxitDemo3.png" alt="AUXIT Platform Demo 3">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lightbox -->
+            <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+                <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+                <div class="lightbox-content">
+                    <img id="lightbox-img" src="" alt="Full size image">
+                </div>
+            </div>
+
+            <div class="roadmap-section">
+                <h2>Project Scope & Technical Architecture</h2>
+                <div class="roadmap-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Phase 1</div>
+                        <div class="timeline-content">
+                            <h3>Research & Planning</h3>
+                            <ul>
+                                <li>Music recommendation algorithm research</li>
+                                <li>Neural network architecture design</li>
+                                <li>API integration strategy with Spotify and Apple Music</li>
+                                <li>User experience and interface design</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Phase 2</div>
+                        <div class="timeline-content">
+                            <h3>AI Development</h3>
+                            <ul>
+                                <li>Machine learning model development and training</li>
+                                <li>Natural Language Processing for lyric analysis</li>
+                                <li>Real-time mood detection algorithm implementation</li>
+                                <li>Pattern recognition system for musical preferences</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Phase 3</div>
+                        <div class="timeline-content">
+                            <h3>Platform Integration</h3>
+                            <ul>
+                                <li>Cross-platform API integration development</li>
+                                <li>Dynamic playlist generation system</li>
+                                <li>Collaborative filtering and social features</li>
+                                <li>Concert recommendation engine design</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Outcome</div>
+                        <div class="timeline-content">
+                            <h3>Achievements & Learning</h3>
+                            <ul>
+                                <li>Deep expertise in AI/ML for music recommendation systems</li>
+                                <li>Experience with advanced neural network architectures</li>
+                                <li>Comprehensive understanding of music API integration</li>
+                                <li>Full product design and development lifecycle experience</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 80px;">
+                <a href="index.html#projects" class="btn btn-primary">
+                    <i class="fas fa-arrow-left"></i> Back to All Projects
+                </a>
+                <a href="index.html#contact" class="btn btn-secondary">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Yordan Todorov. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/yordan-todorov-b188002aa/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/yordancho1" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:yordan485@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Lightbox functionality
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = imageSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
+
